@@ -1,39 +1,62 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# wave_avatar
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A highly customizable Flutter avatar widget clipped into beautiful animated wave shapes. Supports multiple preset wave styles like sine, flower, star, blob, audio, heartbeat, liquid, and noise.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- **Custom Wave Shapes**: Clip your avatars using standard shapes, organic blobs, heartbeats, starbursts, or audio waveforms.
+- **Borders & Backgrounds**: Customize border width, border color, and background color behind clipped elements.
+- **Configurable Wave Properties**: Change frequency, amplitude, phase, and smoothness dynamically.
+- **Fully Responsive**: Adapts seamlessly to any parent bounds.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add `wave_avatar` to your `pubspec.yaml` dependencies:
+
+```yaml
+dependencies:
+  wave_avatar:
+    git:
+      url: https://github.com/gadgetsteach/wave_avatar.git
+```
+
+Then, import the package in your Dart code:
+
+```dart
+import 'package:wave_avatar/wave_avatar.dart';
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Create a simple wave-shaped avatar:
 
 ```dart
-const like = 'sample';
+WaveAvatar(
+  config: const WaveConfig(
+    waveType: WaveType.liquid,
+    amplitude: 8.0,
+    frequency: 6.0,
+  ),
+  child: Image.network('https://example.com/avatar.jpg'),
+)
+```
+
+Create a wave avatar with a border and custom background:
+
+```dart
+WaveAvatar(
+  config: const WaveConfig(
+    waveType: WaveType.blob,
+    amplitude: 12.0,
+    smoothness: 120,
+  ),
+  backgroundColor: Colors.blue.shade100,
+  borderColor: Colors.blue,
+  borderWidth: 3.0,
+  child: Image.asset('assets/avatar.png'),
+)
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+For bug reports, feature requests, or contributions, please visit the repository at [https://github.com/gadgetsteach/wave_avatar](https://github.com/gadgetsteach/wave_avatar).
