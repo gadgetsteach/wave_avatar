@@ -15,10 +15,7 @@ void main() {
               amplitude: 10,
               frequency: 5,
             ),
-            child: SizedBox(
-              width: 100,
-              height: 100,
-            ),
+            child: SizedBox(width: 100, height: 100),
           ),
         ),
       ),

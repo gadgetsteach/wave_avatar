@@ -1,5 +1,5 @@
 name: wave_avatar
-description: "A new Flutter package project."
+description: "A highly customizable Flutter avatar widget clipped into beautiful animated wave shapes, including sine, flower, star, blob, audio, heartbeat, liquid, and noise waveforms."
 version: 0.0.1
 repository: https://github.com/gadgetsteach/wave_avatar
 

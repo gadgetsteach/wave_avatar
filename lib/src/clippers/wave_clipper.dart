@@ -17,8 +17,7 @@ class WaveClipper extends CustomClipper<Path> {
     final centerX = size.width / 2;
     final centerY = size.height / 2;
 
-    final radius =
-        min(size.width, size.height) * config.radiusFactor;
+    final radius = min(size.width, size.height) * config.radiusFactor;
 
     for (int i = 0; i <= config.smoothness; i++) {
       final angle = (i / config.smoothness) * 360;
@@ -43,21 +42,17 @@ class WaveClipper extends CustomClipper<Path> {
   double _wave(double rad) {
     switch (config.waveType) {
       case WaveType.sine:
-        return config.amplitude *
-            sin(rad * config.frequency + config.phase);
+        return config.amplitude * sin(rad * config.frequency + config.phase);
 
       case WaveType.flower:
-        return config.amplitude *
-            sin(rad * config.frequency);
+        return config.amplitude * sin(rad * config.frequency);
 
       case WaveType.star:
-        return config.amplitude *
-            cos(rad * config.frequency);
+        return config.amplitude * cos(rad * config.frequency);
 
       case WaveType.blob:
         return config.amplitude *
-            (sin(rad * 3 + config.phase) +
-                cos(rad * 5 + config.phase) * .5);
+            (sin(rad * 3 + config.phase) + cos(rad * 5 + config.phase) * .5);
 
       case WaveType.audio:
         return config.amplitude *
@@ -79,15 +74,14 @@ class WaveClipper extends CustomClipper<Path> {
       case WaveType.noise:
         return config.amplitude *
             (sin(rad * config.frequency + config.phase) * 0.7 +
-                sin(rad * (config.frequency * 4.5) + config.phase * 2.1) * 0.25 +
+                sin(rad * (config.frequency * 4.5) + config.phase * 2.1) *
+                    0.25 +
                 sin(rad * (config.frequency * 12.0)) * 0.05);
     }
   }
 
   @override
-  bool shouldReclip(
-    covariant WaveClipper oldClipper,
-  ) {
+  bool shouldReclip(covariant WaveClipper oldClipper) {
     return oldClipper.config != config;
   }
 }

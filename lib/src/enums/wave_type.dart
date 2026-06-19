@@ -1,10 +1,1 @@
-enum WaveType {
-  sine,
-  flower,
-  star,
-  blob,
-  audio,
-  heartbeat,
-  liquid,
-  noise,
-}
+enum WaveType { sine, flower, star, blob, audio, heartbeat, liquid, noise }

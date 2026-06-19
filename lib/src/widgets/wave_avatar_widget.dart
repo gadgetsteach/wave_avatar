@@ -35,10 +35,7 @@ class WaveAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget avatar = ClipPath(
-      clipper: WaveClipper(config),
-      child: child,
-    );
+    Widget avatar = ClipPath(clipper: WaveClipper(config), child: child);
 
     if (backgroundColor != null) {
       avatar = CustomPaint(
@@ -61,18 +58,12 @@ class WaveAvatar extends StatelessWidget {
       );
     }
 
-    return Padding(
-      padding: padding,
-      child: avatar,
-    );
+    return Padding(padding: padding, child: avatar);
   }
 }
 
 class _WaveBackgroundPainter extends CustomPainter {
-  const _WaveBackgroundPainter({
-    required this.config,
-    required this.color,
-  });
+  const _WaveBackgroundPainter({required this.config, required this.color});
 
   final WaveConfig config;
   final Color color;
