@@ -1,7 +1,7 @@
 name: wave_avatar
 description: "A new Flutter package project."
 version: 0.0.1
-homepage:
+repository: https://github.com/gadgetsteach/wave_avatar
 
 environment:
   sdk: ^3.12.2
